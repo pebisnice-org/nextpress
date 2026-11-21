@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+.pnpm-store/
+
+# Build output
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+
+# Turborepo
+.turbo/
+
+# Vercel
+.vercel/
+
+# Local media uploads (STORAGE_DRIVER=local)
+apps/web/public/uploads/
+
+# Environment
+.env
+.env*.local
+.env.development
+.env.production
+.env.test
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+playwright-report/
+test-results/
+
+# Cache
+.cache/
+.eslintcache
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

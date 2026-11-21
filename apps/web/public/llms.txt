@@ -1,0 +1,30 @@
+# NextPress
+
+> An open-source, AI-first CMS built on Next.js, Supabase PostgreSQL, and Hono.
+
+NextPress is a WordPress alternative designed for the AI era. It exposes a full REST API
+(OpenAPI 3.0), an MCP server for AI agents, and clean semantic HTML optimized for
+LLM crawlers like GPTBot, ClaudeBot, and PerplexityBot.
+
+## API
+
+- REST API: /api — CRUD for posts, pages, and taxonomies
+- OpenAPI spec: /api/openapi.json
+- API docs: /api/docs
+- MCP server: /api/mcp (Streamable HTTP, X-Api-Key header)
+
+## Authentication
+
+Include the header `X-Api-Key: <key>` on all API and MCP requests.
+The key is the site owner's NEXTPRESS_API_KEY environment variable.
+
+## Content
+
+- Blog posts: /blog
+- Individual post: /blog/:slug
+- Sitemap: /sitemap.xml
+
+## Theme System
+
+Themes implement the `ThemeConfig` interface from `@nextpress/theme-engine`.
+Call the MCP tool `get_theme_spec` to retrieve the full interface schema.

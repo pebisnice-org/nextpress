@@ -1,0 +1,5 @@
+export type { Post, NewPost } from "../schema/posts"
+export type { Page, NewPage } from "../schema/pages"
+export type { Taxonomy, NewTaxonomy } from "../schema/taxonomies"
+export type { Media, NewMedia } from "../schema/media"
+export type { Setting, Menu, NewMenu } from "../schema/settings"

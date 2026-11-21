@@ -1,0 +1,64 @@
+---
+title: Theme Development
+description: Build custom themes for NextPress
+---
+
+## Overview
+
+A NextPress theme is a package that exports a `ThemeConfig` object implementing the `@nextpress/theme-engine` interface.
+
+Themes receive data as React props — they never query the database directly.
+
+## ThemeConfig interface
+
+```ts
+import { defineTheme } from "@nextpress/theme-engine"
+
+export const theme = defineTheme({
+  name: "my-theme",
+  version: "1.0.0",
+  supports: ["blog", "landing"],
+  slots: {
+    Layout,
+    Header,
+    Footer,
+    PostCard,
+    PostDetail,
+    CategoryPage,
+    TagPage,
+    HomePage,
+  },
+})
+```
+
+## Slots
+
+| Slot | Props | Renders |
+|---|---|---|
+| `Layout` | `LayoutProps` | Page wrapper |
+| `Header` | `HeaderProps` | Site header |
+| `Footer` | `FooterProps` | Site footer |
+| `PostCard` | `PostCardProps` | Post list item |
+| `PostDetail` | `PostDetailProps` | Full post page |
+| `CategoryPage` | `CategoryPageProps` | Category archive |
+| `TagPage` | `TagPageProps` | Tag archive |
+| `HomePage` | `HomePageProps` | Home page |
+
+## Get the spec via MCP
+
+AI agents can retrieve the full TypeScript interface via the MCP tool:
+
+```json
+{
+  "tool": "get_theme_spec"
+}
+```
+
+## Scaffold a new theme
+
+```bash
+cp -r themes/default themes/my-theme
+cd themes/my-theme
+# Update package.json name
+# Edit src/index.tsx and components
+```

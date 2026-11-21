@@ -1,0 +1,19 @@
+{
+  "name": "@nextpress/theme-engine",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@nextpress/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@nextpress/config": "workspace:*",
+    "@types/react": "^19.1.5",
+    "typescript": "^5.8.3"
+  }
+}

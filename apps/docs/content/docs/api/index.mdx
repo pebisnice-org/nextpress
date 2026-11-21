@@ -1,0 +1,65 @@
+---
+title: API Reference
+description: REST API and MCP server documentation
+---
+
+## REST API
+
+Base URL: `https://your-site.com/api`
+
+Interactive docs: `/api/docs`
+OpenAPI spec: `/api/openapi.json`
+
+### Authentication
+
+All endpoints require an `X-Api-Key` header:
+
+```bash
+curl -H "X-Api-Key: your-key" https://your-site.com/api/posts
+```
+
+### Endpoints
+
+| Method | Path | Description |
+|---|---|---|
+| GET | `/api/posts` | List posts |
+| POST | `/api/posts` | Create post |
+| GET | `/api/posts/:id` | Get post |
+| PUT | `/api/posts/:id` | Update post |
+| DELETE | `/api/posts/:id` | Delete post |
+| GET | `/api/pages` | List pages |
+| POST | `/api/pages` | Create page |
+| GET | `/api/taxonomies` | List taxonomies |
+| POST | `/api/taxonomies` | Create taxonomy |
+
+## MCP Server
+
+Endpoint: `/api/mcp`
+Transport: SSE
+
+### Available tools
+
+| Tool | Description |
+|---|---|
+| `create_post` | Create a blog post |
+| `update_post` | Update a post by ID |
+| `list_posts` | List posts with filters |
+| `get_post` | Get a post by slug |
+| `create_taxonomy` | Create a category or tag |
+| `get_site_config` | Get site settings |
+| `get_theme_spec` | Get ThemeConfig interface schema |
+
+### Configure in Claude Code
+
+```json
+{
+  "mcpServers": {
+    "nextpress": {
+      "url": "https://your-site.com/api/mcp",
+      "headers": {
+        "X-Api-Key": "your-key"
+      }
+    }
+  }
+}
+```

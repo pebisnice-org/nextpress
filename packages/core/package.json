@@ -1,0 +1,26 @@
+{
+  "name": "@nextpress/core",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./schema": "./src/schema/index.ts",
+    "./db": "./src/db/index.ts",
+    "./validators": "./src/validators/index.ts",
+    "./types": "./src/types/index.ts"
+  },
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.44.0",
+    "postgres": "^3.4.5",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@nextpress/config": "workspace:*",
+    "drizzle-kit": "^0.31.0",
+    "typescript": "^5.8.3"
+  }
+}
